@@ -6,7 +6,7 @@
   height: 40vmin;
 }
 
-.App-header {
+.App-container {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,4 +19,59 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.CellView {
+  display : inline-block;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  border: solid 1px gray;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.CellView[custom-isdefault="true"] {
+  color: aqua;
+}
+
+.CellView[custom-iscustomisable="true"] {
+  cursor: pointer;
+}
+
+.CellView:nth-of-type(3n+1){
+  border-left: solid 2px darkgray;
+}
+
+.CellView:nth-of-type(3n){
+  border-right: solid 2px darkgray;
+}
+
+.Row:nth-child(3n+1){
+  border-top: solid 2px darkgray;
+}
+
+.Row:nth-child(3n){
+  border-bottom: solid 2px darkgray;
+}
+
+.SudokuView {
+  margin: 5px;
+}
+
+[style-inline-block] {
+  display: inline-block;
+}
+
+[custom-unsolved="true"]::before {
+  content: "Unsolved : ";
+  color : red;
+}
+
+[custom-unsolved="false"]::before {
+  content: "Solved : ";
+  color : green;
 }
